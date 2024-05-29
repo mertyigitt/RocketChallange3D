@@ -2,22 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using RocketChallange.Inputs;
+using RocketChallange.Movements;
 using UnityEngine;
 
 namespace RocketChallange.Controllers
 { 
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float force;
-        private Rigidbody _rigidbody;
         private DefaultInput _input;
-
+        private Mover _mover;
+        
         private bool _isForceUp;
 
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody>();
             _input = new DefaultInput();
+            _mover = new Mover(GetComponent<Rigidbody>());
         }
 
         private void Update()
@@ -36,7 +36,7 @@ namespace RocketChallange.Controllers
         {
             if (_isForceUp)
             {
-                _rigidbody.AddForce(Vector3.up * force, ForceMode.Force);
+                _mover.FixedTick();
             }
         }
     }

@@ -911,10 +911,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1242052351984872787, guid: 58ab499421c5dc2429dd2866fe070a94,
+    - target: {fileID: 1078431955662838350, guid: 58ab499421c5dc2429dd2866fe070a94,
         type: 3}
-      propertyPath: force
-      value: 20
+      propertyPath: m_Mass
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6479884612546670571, guid: 58ab499421c5dc2429dd2866fe070a94,
         type: 3}
