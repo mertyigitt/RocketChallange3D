@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using RocketChallange.Inputs;
+using RocketChallange.Managers;
 using RocketChallange.Movements;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RocketChallange.Controllers
@@ -15,7 +17,8 @@ namespace RocketChallange.Controllers
         private Mover _mover;
         private Rotator _rotator;
         private Fuel _fuel;
-        
+
+        private bool _canMove;
         private bool _canForceUp;
         private float _leftRight;
         public float TurnSpeed => _turnSpeed;
@@ -29,8 +32,27 @@ namespace RocketChallange.Controllers
             _fuel = GetComponent<Fuel>();
         }
 
+        private void Start()
+        {
+            _canMove = true;
+        }
+
+        private void OnEnable()
+        {
+            GameManager.Instance.OnGameOver += HandleOnEventTrigger;
+            GameManager.Instance.OnMissionSucced += HandleOnEventTrigger;
+        }
+        
+        private void OnDisable()
+        {
+            GameManager.Instance.OnGameOver -= HandleOnEventTrigger;
+            GameManager.Instance.OnMissionSucced -= HandleOnEventTrigger;
+        }
+
         private void Update()
         {
+            if (!_canMove) return;
+            
             if (_input.IsForceUp && !_fuel.IsEmpty)
             {
                 _canForceUp = true;
@@ -38,7 +60,7 @@ namespace RocketChallange.Controllers
             else
             {
                 _canForceUp = false;
-                _fuel.FuelIncrease(0.01f);
+                _fuel.FuelIncrease(0.02f);
             }
 
             _leftRight = _input.LeftRight;
@@ -53,6 +75,15 @@ namespace RocketChallange.Controllers
             }
             
             _rotator.FixedTick(_leftRight);
+        }
+        
+        private void HandleOnEventTrigger()
+        {
+            _canMove = false;
+            _canForceUp = false;
+            _leftRight = 0f;
+            _fuel.FuelIncrease(0f);
+
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RocketChallange.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,7 @@ namespace RocketChallange.Controllers
 
             if (player != null)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                GameManager.Instance.GameOver();
             }
         }
     }
