@@ -580,13 +580,13 @@ Transform:
   - {fileID: 994932014956881456}
   m_Father: {fileID: 759054528}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1556070189
+--- !u!43 &1780141555
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20582(Clone)(Clone)(Clone)(Clone)
+  m_Name: pb_Mesh-20582(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -807,12 +807,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1556070189}
+      objectReference: {fileID: 1780141555}
     - target: {fileID: 8958277517302674246, guid: 58ab499421c5dc2429dd2866fe070a94,
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1556070189}
+      objectReference: {fileID: 1780141555}
     - target: {fileID: 9183128444599044031, guid: 58ab499421c5dc2429dd2866fe070a94,
         type: 3}
       propertyPath: m_Name
@@ -1152,11 +1152,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 2109352574800282768, guid: d0d52b942cee70b4492a1f775863054d,
-        type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7182230625354791180, guid: d0d52b942cee70b4492a1f775863054d,
         type: 3}
