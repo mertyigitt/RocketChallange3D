@@ -21,7 +21,6 @@ namespace RocketChallange.Managers
         public void GameOver()
         {
             OnGameOver?.Invoke();
-            LoadLevelScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void MissionSucced()
