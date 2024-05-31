@@ -26,7 +26,6 @@ namespace RocketChallange.Managers
         public void MissionSucced()
         {
             OnMissionSucced?.Invoke();
-            LoadLevelSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void LoadLevelScene(int levelIndex = 0)

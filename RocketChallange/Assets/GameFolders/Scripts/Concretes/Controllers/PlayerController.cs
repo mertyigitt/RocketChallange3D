@@ -23,6 +23,7 @@ namespace RocketChallange.Controllers
         private float _leftRight;
         public float TurnSpeed => _turnSpeed;
         public float Force => _force;
+        public bool CanMove => _canMove;
 
         private void Awake()
         {
@@ -83,7 +84,6 @@ namespace RocketChallange.Controllers
             _canForceUp = false;
             _leftRight = 0f;
             _fuel.FuelIncrease(0f);
-
         }
     }
 }
