@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using RocketChallange.Controllers;
 using RocketChallange.Managers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace RocketChallange.Controllers
+namespace RocketChallange.Abstracts.Controllers
 {
-    public class WallController : MonoBehaviour
+    public abstract class WallController : MonoBehaviour
     {
         private void OnCollisionEnter(Collision other)
         {
