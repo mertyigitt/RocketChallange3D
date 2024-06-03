@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RocketChallange.Managers;
 using UnityEngine;
 
 namespace RocketChallange.Movements
@@ -27,6 +28,8 @@ namespace RocketChallange.Movements
             {
                 particle.Stop();
             }
+            
+            SoundManager.Instance.StopSound(0);
         }
         
         public void FuelDecrease(float decrease)
@@ -38,6 +41,8 @@ namespace RocketChallange.Movements
             {
                 particle.Play();
             }
+            
+            SoundManager.Instance.PlaySound(0);
         }
     }
 }
