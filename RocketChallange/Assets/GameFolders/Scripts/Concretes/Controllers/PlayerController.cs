@@ -61,7 +61,7 @@ namespace RocketChallange.Controllers
             else
             {
                 _canForceUp = false;
-                _fuel.FuelIncrease(0.02f);
+                _fuel.FuelIncrease(0.05f);
             }
 
             _leftRight = _input.LeftRight;
